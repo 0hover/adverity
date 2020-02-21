@@ -45,5 +45,43 @@ I prepared infrasctructure on GCP for this excercise so it is possible to presen
 5) in order to execute script it has been modified to allow execution : `chmod +x`
 6) to run script user has to provide argumens in following manner `$ ./script.py <server name> <command to execute on target>` ie. ./script.py server1 'ls -lah'
 
-This is obviously PoC without any comments, error handling etc. intended to show possible solution for problem from question 2.
+This is obviously PoC without any comments, error handling etc. intended to show possible solution for problem from question 2.  
+Current setup on GCP
 ![GCP inventory](gcp_servers.png?raw=true "Title")
+  
+Example run. Compare internal IP from above with command result below. You will notice that command returns IP of target server.
+
+```bash
+gcp@instance:~/adverity$ ls -lah
+total 16K
+drwxrwxr-x 2 gcp gcp 4.0K Feb 21 19:41 .
+drwxr-xr-x 8 gcp gcp 4.0K Feb 21 19:41 ..
+-rw-rw-r-- 1 gcp gcp   96 Feb 21 19:41 inventory
+-rwxr-xr-x 1 gcp gcp 1.1K Feb 21 19:41 script.py
+gcp@instance:~/adverity$ ./script.py server1 'sudo ifconfig'
+Server found: server1
+Target IP: 35.222.15.186
+Bastion IP: 35.202.96.42
+Command result:
+eth0      Link encap:Ethernet  HWaddr 42:01:0A:80:00:0B  
+          inet addr:10.128.0.11  Bcast:10.128.0.11  Mask:255.255.255.255
+          inet6 addr: fe80::4001:aff:fe80:b/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1460  Metric:1
+          RX packets:28723 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:27554 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:28280796 (26.9 MiB)  TX bytes:3294995 (3.1 MiB)
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:0 (0.0 b)  TX bytes:0 (0.0 b)
+
+
+Return code: None
+gcp@instance:~/adverity$
+```
