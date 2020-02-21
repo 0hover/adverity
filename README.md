@@ -43,7 +43,7 @@ I prepared infrasctructure on GCP for this excercise so it is possible to presen
 3) user for both bastion and target server is gcp
 4) inventory file must exist on local machine in the same folder as the script
 5) in order to execute script it has been modified to allow execution : `chmod +x`
-6) to run script user has to provide argumens in following manner `$ ./script.py <server name> <command to execute on target>` ie. ./script.py server1 'ls -lah'
+6) to run script user has to provide argumens in following manner `$ ./script.py <server name> <command to execute on target>` ie. `./script.py server1 'ls -lah'`
 
 This is obviously PoC without any comments, error handling etc. intended to show possible solution for problem from question 2.  
 Current setup on GCP
