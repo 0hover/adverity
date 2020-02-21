@@ -46,3 +46,4 @@ I prepared infrasctructure on GCP for this excercise so it is possible to presen
 6) to run script user has to provide argumens in following manner `$ ./script.py <server name> <command to execute on target>` ie. ./script.py server1 'ls -lah'
 
 This is obviously PoC without any comments, error handling etc. intended to show possible solution for problem from question 2.
+![GCP inventory](gcp_inventory.png?raw=true "Title")
