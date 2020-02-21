@@ -83,5 +83,12 @@ lo        Link encap:Local Loopback
 
 
 Return code: None
+gcp@instance:~/adverity$ cat inventory 
+server1:
+  ip: 35.222.15.186 
+  bastion: 35.202.96.42
+server2:
+  ip: 0.0.0.0
+  bastion: 1.1.1.1
 gcp@instance:~/adverity$
 ```
