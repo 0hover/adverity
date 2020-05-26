@@ -22,7 +22,7 @@ steps:
 # Copy files to Azure Blob Storage or virtual machines
 - task: AzureFileCopy@4
   inputs:
-    sourcePath: $(Build.Repository.LocalPath)
+    sourcePath: $(Build.Repository.LocalPath)/*
     azureSubscription: Wiley
     destination: azureBlob
     storage: wileystrgrp
