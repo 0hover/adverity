@@ -17,6 +17,8 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
+- script: |
+    rm -rf .git
 
 # Azure file copy
 # Copy files to Azure Blob Storage or virtual machines
@@ -26,4 +28,4 @@ steps:
     azureSubscription: Wiley
     destination: azureBlob
     storage: wileystrgrp
-    containerName: wiley
+    containerName: test
