@@ -32,6 +32,7 @@ steps:
     targetType: 'inline'
     script: |
       # Write your commands here
+      # Comment
       for f in DEV*; do mv "$f" "$(echo $f | sed 's/DEV_//g')"; done
 
 # Azure file copy
