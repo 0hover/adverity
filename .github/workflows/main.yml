@@ -36,7 +36,7 @@ jobs:
       uses: kheiakiyama/install-azcopy-action@v1.0.1
       with:
         # azcopy version to download. (currently can set `v10` only
-        version: v10
+        version: 'v10'
         creds: ${{ secrets.AZURE_CREDENTIALS }}
         
     - run: azcopy_v10 --source ./ --destination https://wileystrgrp.blob.core.windows.net/test --recursive --set-content-type
