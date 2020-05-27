@@ -31,7 +31,7 @@ steps:
       for f in DEV*; do mv "$f" "$(echo $f | sed 's/DEV_//g')"; done
 
 # Azure file copy
-# Copy files to Azure Blob Storage or virtual machines
+# Copy files to Azure Blob Storage or virtual machines.
 - task: AzureFileCopy@4
   inputs:
     sourcePath: $(Build.Repository.LocalPath)/*
