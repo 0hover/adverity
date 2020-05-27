@@ -28,7 +28,7 @@ steps:
     targetType: 'inline'
     script: |
       # Write your commands here
-      rename 's/DEV_//' *
+      for f in DEV*; do mv "$f" "$(echo $f | sed 's/DEV//g')"; done
 
 # Azure file copy
 # Copy files to Azure Blob Storage or virtual machines
