@@ -3,8 +3,10 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
-trigger:
-- none
+trigger: 
+  branches:
+    exclude:
+    - master
 
 pool:
   vmImage: 'windows-latest'
@@ -28,7 +30,6 @@ steps:
     targetType: 'inline'
     script: |
       # Write your commands here
-      # abc
       for f in DEV*; do mv "$f" "$(echo $f | sed 's/DEV_//g')"; done
 
 # Azure file copy
