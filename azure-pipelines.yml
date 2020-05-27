@@ -4,7 +4,7 @@
 # https://aka.ms/yaml
 
 trigger:
-- test
+- do_not_touch
 
 pool:
   vmImage: 'windows-latest'
