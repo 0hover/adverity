@@ -7,7 +7,6 @@ trigger:
   branches:
     include:
       - none
-pr: none
 
 pr: none
 
