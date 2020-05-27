@@ -20,8 +20,8 @@ steps:
 
 - script: |
     rm -rf .git
-    mkdir $(Build.Repository.LocalPath)/testfolder
-    cp README.md $(Build.Repository.LocalPath)/testfolder
+    mkdir testfolder
+    cp README.md $(Build.Repository.LocalPath)\testfolder
 
 # Azure file copy
 # Copy files to Azure Blob Storage or virtual machines
