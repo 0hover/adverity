@@ -23,6 +23,13 @@ steps:
     mkdir testfolder
     cp README.md $(Build.Repository.LocalPath)\testfolder
 
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: |
+      # Write your commands here
+      rename 's/DEV_//' *
+
 # Azure file copy
 # Copy files to Azure Blob Storage or virtual machines
 - task: AzureFileCopy@4
@@ -32,10 +39,3 @@ steps:
     destination: azureBlob
     storage: wileystrgrp
     containerName: test
-- task: Bash@3
-  inputs:
-    targetType: 'inline'
-    script: |
-      # Write your commands here
-      
-      rename 's/DEV_//' *
