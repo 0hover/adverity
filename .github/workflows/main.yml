@@ -38,4 +38,4 @@ jobs:
         version: 'v10'
         creds: ${{ secrets.AZURE_CREDENTIALS }}
     - name: Run AZCopy
-      run: azcopy_v10  ${{ GITHUB_WORKSPACE }}  https://wileystrgrp.blob.core.windows.net/test --recursive --set-content-type
+      run: azcopy_v10  $GITHUB_WORKSPACE  https://wileystrgrp.blob.core.windows.net/test --recursive --set-content-type
