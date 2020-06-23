@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-  
+#
 import re, sys, subprocess
 
 server = sys.argv[1] #get server name from command line
